@@ -12,7 +12,7 @@ function UpdateRecProfile() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
-
+  const url = import.meta.env.VITE_BACKEND_URL
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
@@ -58,7 +58,7 @@ function UpdateRecProfile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:4000/api/get-doctor-info-by-user-id",
+        `${url}/api/get-doctor-info-by-user-id`,
         { userId: user._id },
         {
           headers: {
@@ -93,7 +93,7 @@ function UpdateRecProfile() {
       formData.append("userId", user._id);
 
       const response = await axios.post(
-        "http://localhost:4000/api/update-doctor-profile",
+        `${url}/api/update-doctor-profile`,
         formData,
         {
           headers: {

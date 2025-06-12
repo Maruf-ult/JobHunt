@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
   const [data, setData] = useState({
     name: "",
     email: "",

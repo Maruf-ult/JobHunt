@@ -9,7 +9,7 @@ import Layout from "../common/Layout";
 function UserList() {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ function UserList() {
       render: (text, record) => (
         <div className="flex items-center">
           <img
-            src={`http://localhost:4000/${record.image?.split("\\").pop()}`}
+            src={`${url}/${record.image?.split("\\").pop()}`}
             alt=""
             className="w-10 h-10 rounded-full mr-2"
           />

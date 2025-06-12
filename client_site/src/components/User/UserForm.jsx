@@ -9,6 +9,7 @@ function UserProfileForm({ formValues, handleInputChange, handleFileChange, hand
       ? formValues.skills.split(", ") 
       : []
   );
+  const url = import.meta.process.env.BACKEND_URL
 
   // Function to handle adding skills when space is pressed
   const handleSkillsInput = (e) => {
@@ -41,7 +42,7 @@ function UserProfileForm({ formValues, handleInputChange, handleFileChange, hand
           <div className="w-32 h-32 mt-5 rounded-full overflow-hidden border border-gray-500 flex justify-center items-center">
             {formValues.image ? (
               typeof formValues.image === "string" ? (
-                <img src={`http://localhost:4000/${formValues.image}`} alt="Profile" className="w-full h-full object-cover rounded-full" />
+                <img src={`${url}/${formValues.image}`} alt="Profile" className="w-full h-full object-cover rounded-full" />
               ) : (
                 <img src={URL.createObjectURL(formValues.image)} alt="Profile" className="w-full h-full object-cover rounded-full" />
               )
@@ -144,7 +145,7 @@ function UserProfileForm({ formValues, handleInputChange, handleFileChange, hand
     {formValues.resume && (
       <a
         href={typeof formValues.resume === "string"
-          ? `http://localhost:4000/${formValues.resume}`
+          ? `${url}/${formValues.resume}`
           : URL.createObjectURL(formValues.resume)}
         target="_blank"
         rel="noopener noreferrer"

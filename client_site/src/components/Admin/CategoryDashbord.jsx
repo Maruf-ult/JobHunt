@@ -8,11 +8,12 @@ function CategoryDashbord() {
   const [jobData, setJobData] = useState([]);
   const [jobCategories, setJobCategories] = useState([]);
   const dispatch = useDispatch();
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const getJobs = async () => {
     try {
       dispatch(showLoading());
-      const response = await axios.get("http://localhost:4000/api/get-jobs", {
+      const response = await axios.get(`${url}/api/get-jobs`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

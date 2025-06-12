@@ -15,7 +15,7 @@ function MainDashboard() {
   const [rec, setRec] = useState();
 
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const getUserData = async () => {
     try {
@@ -51,7 +51,7 @@ function MainDashboard() {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "http://localhost:4000/api/get-appointments",
+        `${url}/api/get-appointments`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

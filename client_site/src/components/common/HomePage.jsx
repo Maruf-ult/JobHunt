@@ -12,7 +12,7 @@ function HomePage() {
   const [jobs, setJobs] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
 
   // Fetch Jobs
   const getJobs = async () => {

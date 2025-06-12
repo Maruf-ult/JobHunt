@@ -15,7 +15,7 @@ function Home() {
   const [recruiters, setRecruiters] = useState([]);
   const [jobs, setJobs] = useState([]);
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -178,35 +178,33 @@ function Home() {
         </h1>
 
         <div className="flex flex-row justify-start flex-wrap gap-4 w-3/4">
-          {jobs.length > 0 ? (
-            jobs.map((job) => {
-              const company = recruiters.find(
-                (recruiter) => recruiter.userId === job.createdBy
-              );
-              return (
-                <div key={job._id} className="p-4 rounded-md ">
-                  <Jobs recruiter={company} job={job} />
-                </div>
-              );
-            })
-          ) : (
-            <p className="text-center text-gray-500 text-lg">
-              No jobs available.
-            </p>
-          )}
+        {jobs.length > 0 ? (
+  jobs.slice(0, 3).map((job) => {
+    const company = recruiters.find(
+      (recruiter) => recruiter.userId === job.createdBy
+    );
+    return (
+      <div key={job._id} className="p-4 rounded-md ">
+        <Jobs recruiter={company} job={job} />
+      </div>
+    );
+  })
+) : (
+  <p className="text-center text-gray-500 text-lg">No jobs available.</p>
+)}
         </div>
       </div>
 
       <div
         id="browse"
-        className="w-screen min-h-screen bg-slate-200 flex flex-col items-start justify-center"
+        className="w-screen min-h-screen bg-slate-200 flex flex-col items-center justify-center"
       >
         <h1 className="text-4xl font-bold mx-auto mb-6">
           <span className="text-[#6A38C2]">Latest and Top</span> Job Openings
         </h1>
 
-        <Row gutter={20} className="w-3/4 flex pl-20 ">
-          <Col className="pt-4  " xs={24} sm={6} md={4} lg={4}>
+        <Row gutter={20} className="w-4/4 flex  mx-auto pl-12 ">
+          <Col className="pt-4 -mr-14 " xs={24} sm={6} md={4} lg={4}>
             <JobFilters setSelectedCategory={setSelectedCategory} />
           </Col>
 

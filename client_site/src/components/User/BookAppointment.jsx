@@ -17,7 +17,7 @@ function BookAppointment() {
   const params = useParams();
   const dispatch = useDispatch();
   const [recruiter, setRecruiter] = useState(null);
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const navigate = useNavigate();
 

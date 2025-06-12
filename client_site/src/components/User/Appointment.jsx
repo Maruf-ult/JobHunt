@@ -9,12 +9,13 @@ import Layout from "../common/Layout";
 function Appointment() {
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const getAppointmentsData = async () => {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "http://localhost:4000/api/get-appointments-by-user-id",
+        `${url}/api/get-appointments-by-user-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

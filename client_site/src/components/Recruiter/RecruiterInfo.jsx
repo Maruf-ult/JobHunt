@@ -8,7 +8,7 @@ import Layout from "../common/Layout";
 function RecruiterCV() {
   const { id } = useParams();
   const [recruiter, setRecruiter] = useState(null);
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
   const navigate = useNavigate();
   const getRecruiterDetails = async () => {
     try {
@@ -37,11 +37,11 @@ function RecruiterCV() {
   if (!recruiter) return <p className="text-center mt-10">Loading...</p>;
 
   const profileImage = recruiter.image
-    ? `http://localhost:4000/${recruiter.image?.split("\\").pop()}`
+    ? `${url}/${recruiter.image?.split("\\").pop()}`
     : "https://via.placeholder.com/100";
 
   const logoImage = recruiter.logo
-    ? `http://localhost:4000/${recruiter.logo?.split("\\").pop()}`
+    ? `${url}/${recruiter.logo?.split("\\").pop()}`
     : "https://via.placeholder.com/100";
 
   return (

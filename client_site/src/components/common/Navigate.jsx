@@ -12,7 +12,7 @@ function Navigate() {
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
 
   useEffect(() => {}, []);
 

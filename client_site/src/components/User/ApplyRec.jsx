@@ -11,6 +11,7 @@ function ApplyRec() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const [formValues, setFormValues] = useState({
     firstName: "",
@@ -77,7 +78,7 @@ function ApplyRec() {
       formData.append("userId", user._id);
 
       const response = await axios.post(
-        "http://localhost:4000/api/apply-doc",
+        `${url}/api/apply-doc`,
         formData,
         {
           headers: {

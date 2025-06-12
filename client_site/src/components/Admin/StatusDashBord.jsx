@@ -8,13 +8,14 @@ function StatusDashboard() {
   const [jobData, setJobData] = useState([0, 0, 0]); 
   const jobLabels = ["Pending", "Approved", "Rejected"];
   const dispatch = useDispatch();
+    const url = import.meta.env.VITE_BACKEND_URL
 
 
    const getStatus  = async () => {
           try {
             dispatch(showLoading());
             const response = await axios.get(
-              "http://localhost:4000/api/get-appointments",
+              `${url}/api/get-appointments`,
               {
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem("token")}`,

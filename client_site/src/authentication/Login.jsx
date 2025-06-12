@@ -8,7 +8,7 @@ import { hideLoading, showLoading } from "../Redux/AlertSlice";
 
 function Login() {
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
   const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",

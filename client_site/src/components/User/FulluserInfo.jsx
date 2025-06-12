@@ -8,7 +8,7 @@ import Layout from "../common/Layout";
 function FulluserInfo() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
   const navigate = useNavigate();
   const getUserDetails = async () => {
     try {
@@ -39,7 +39,7 @@ function FulluserInfo() {
   if (!user) return <p className="text-center mt-10">Loading...</p>;
 
   const profileImage = user.image
-    ? `http://localhost:4000/${user.image?.split("\\").pop()}`
+    ? `${url}/${user.image?.split("\\").pop()}`
     : "https://via.placeholder.com/100";
 
   return (

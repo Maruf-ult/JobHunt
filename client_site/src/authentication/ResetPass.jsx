@@ -10,7 +10,8 @@ function ResetPass() {
   axios.defaults.withCredentials = true; 
   const navigate = useNavigate();
   const dispatch = useDispatch(); 
-   const url = "http://localhost:4000"
+
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const inputRefs = useRef([]);
   const [email, setEmail] = useState("");

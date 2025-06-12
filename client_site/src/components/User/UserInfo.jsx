@@ -8,7 +8,7 @@ import Layout from "../common/Layout";
 function UserInfo() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL
   const navigate = useNavigate();
 
   const getUserDetails = async () => {

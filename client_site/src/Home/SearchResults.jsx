@@ -9,7 +9,7 @@ function SearchResults() {
   const { category } = useParams();
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [recruiters, setRecruiters] = useState([]);
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -13,12 +13,12 @@ function RecruiterAppointment() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-
+   const url = import.meta.env.VITE_BACKEND_URL
   const getRecAppointmentsData = async () => {
     try {
       dispatch(showLoading());
       const response = await axios.get(
-        "http://localhost:4000/api/get-appointments-by-doctor-id",
+        `${url}/api/get-appointments-by-doctor-id`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -41,7 +41,7 @@ function RecruiterAppointment() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:4000/api/change-appointment-status",
+        `${url}/api/change-appointment-status`,
         { appointmentId: record._id, status: status },
         {
           headers: {

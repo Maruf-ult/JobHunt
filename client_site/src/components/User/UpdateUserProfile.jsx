@@ -12,6 +12,7 @@ function UpdateUserProfile() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -55,7 +56,7 @@ function UpdateUserProfile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:4000/api/get-userid",
+        `${url}/api/get-userid`,
         { userId: user._id },
         {
           headers: {
@@ -104,7 +105,7 @@ function UpdateUserProfile() {
       console.log("Sending Data:", Object.fromEntries(formData.entries())); // Debugging log
 
       const response = await axios.post(
-        "http://localhost:4000/api/update-user-profile",
+        `${url}/api/update-user-profile`,
         formData,
         {
           headers: {

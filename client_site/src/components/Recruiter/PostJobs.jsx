@@ -11,7 +11,7 @@ function PostJobs() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const [formValues, setFormValues] = useState({
     position: "",
@@ -41,7 +41,7 @@ function PostJobs() {
       dispatch(showLoading());
 
       const response = await axios.post(
-        "http://localhost:4000/api/post-job",
+        `${url}/api/post-job`,
         formValues,
         {
           headers: {

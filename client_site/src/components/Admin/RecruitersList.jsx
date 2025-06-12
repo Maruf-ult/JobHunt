@@ -11,7 +11,7 @@ import Layout from "../common/Layout";
 function RecruitersList() {
   const [docs, setDocs] = useState([]);
   const dispatch = useDispatch();
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const navigate = useNavigate();
 

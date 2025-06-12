@@ -1,69 +1,4 @@
-// import { useParams } from "react-router-dom";
-// import { useEffect, useState } from "react";
-// import axios from "axios"; // Import Axios
 
-// function JobDetails() {
-//   const { jobId } = useParams();
-//   const [job, setJob] = useState(null);
-//   const [doctor, setDoctor] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchJobDetails = async () => {
-//       try {
-//         const response = await axios.get(`http://localhost:4000/api/jobs/${jobId}`);
-//         setJob(response.data);
-
-//         // Fetch doctor using createdBy ID if it exists
-//         if (response.data.createdBy) {
-//           const doctorResponse = await axios.get(`http://localhost:4000/api/doctors/${response.data.createdBy}`);
-//           setDoctor(doctorResponse.data);
-//         }
-
-//         setLoading(false);
-//       } catch (error) {
-//         console.error("Error fetching job:", error);
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchJobDetails();
-//   }, [jobId]);
-
-//   if (loading) {
-//     return <p>Loading...</p>;
-//   }
-
-//   if (!job) {
-//     return <p>Job details not found.</p>;
-//   }
-
-//   const logoImage = doctor?.logo
-//     ? `http://localhost:4000/${doctor.logo?.split("\\").pop()}`
-//     : "https://via.placeholder.com/100";
-
-//   return (
-//     <>
-//       <img src={logoImage} alt="Company Logo" className="w-20 h-20 rounded-full mt-3" />
-//       <h1>{doctor?.companyName || "Unknown Company"}</h1>
-//       <p>{doctor?.location || "Unknown Location"}</p>
-//       <b>{job.position}</b>
-//       <p>{job.description}</p>
-//       <b>{job.jobType}</b>
-//       <b>{job.salary} LPA</b>
-//       <br />
-//       <b>{new Date(job.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</b>
-//       <br />
-//       <b>Experience Required:</b> {job.experience}
-//       <br />
-//       <b>Skills:</b> {job.skills?.join(", ")} <br />
-//       <b>Facilities:</b> {job.facilities?.join(", ")} <br />
-//       <b>Email:</b> {job.email}
-//     </>
-//   );
-// }
-
-// export default JobDetails;
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -78,7 +13,7 @@ function JobDetails() {
   const [job, setJob] = useState(null);
   const [doctor, setDoctor] = useState(null);
   // const [loading, setLoading] = useState(true);
-  const url = "http://localhost:4000";
+   const url = import.meta.env.VITE_BACKEND_URL
 
   const navigate = useNavigate();
 
