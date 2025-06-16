@@ -12,7 +12,7 @@ function UpdateUserProfile() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();
-   const url = import.meta.env.VITE_BACKEND_URL
+  const url = import.meta.env.VITE_BACKEND_URL
 
   const [formValues, setFormValues] = useState({
     name: "",

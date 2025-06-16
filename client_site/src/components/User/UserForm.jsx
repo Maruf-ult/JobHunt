@@ -9,8 +9,7 @@ function UserProfileForm({ formValues, handleInputChange, handleFileChange, hand
       ? formValues.skills.split(", ") 
       : []
   );
-  const url = import.meta.process.env.BACKEND_URL
-
+  const url = import.meta.env.VITE_BACKEND_URL;
   // Function to handle adding skills when space is pressed
   const handleSkillsInput = (e) => {
     const skill = e.target.value.trim();
@@ -32,6 +31,7 @@ function UserProfileForm({ formValues, handleInputChange, handleFileChange, hand
       target: { name: "skills", value: updatedSkills.join(", ") }, // Update skills value
     });
   };
+
 
   return (
     <form onSubmit={handleSubmit} className="text-black bg-white border h-[80vh] w-[185vh] p-2  flex flex-col">

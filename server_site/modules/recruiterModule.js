@@ -95,10 +95,10 @@ export const getAppointmentsByRecruiterId = async (req, res) => {
 
     // Use the correct doctorId stored in appointments
     const appointments = await appointmentModel.find({
-      doctorId: doctor.userId.toString(),
+      doctorId: recruiter.userId.toString(),
     });
 
-    console.log("Doctor ID Used:", doctor.userId);
+    console.log("Doctor ID Used:", recruiter.userId);
     console.log("Appointments Found:", appointments);
 
     if (!appointments || appointments.length === 0) {

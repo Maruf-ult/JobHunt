@@ -53,7 +53,7 @@ function RecruiterAppointment() {
       if (response.data.success) {
         toast.success(response.data.msg);
         getRecAppointmentsData();
-        navigate("/doctor/appointments");
+        navigate("/recruiter/appointments");
         console.log(response.data.data);
       }
     } catch (error) {
