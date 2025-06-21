@@ -133,7 +133,17 @@ function RecruiterAppointment() {
 
   return (
     <Layout>
-      <h2 className="font-bold text-black pl-3 absolute top-3 mt-3">
+         <h2
+  className="font-bold text-black pl-10"
+  style={{
+    position: "fixed",
+    top: "12px", // adjust vertical position to header height
+    left: "180px", // adjust horizontal position beside JobHunt text
+    zIndex: 9999,
+    backgroundColor: "white", // to cover what's behind if needed
+    padding: "0 6px",
+  }}
+>
         Appointments
       </h2>
       <Table

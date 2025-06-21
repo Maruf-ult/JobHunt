@@ -81,18 +81,29 @@ function HomePage() {
         return locationMatch || positionMatch || salaryMatch;
       });
 
+
   return (
     <Layout>
-      <h2 className="font-bold text-black pl-3 absolute top-3 mt-3">
-        Job Listings
-      </h2>
+    <h2
+  className="font-bold text-black pl-10"
+  style={{
+    position: "fixed",
+    top: "12px", // adjust vertical position to header height
+    left: "180px", // adjust horizontal position beside JobHunt text
+    zIndex: 9999,
+    backgroundColor: "white", // to cover what's behind if needed
+    padding: "0 6px",
+  }}
+>
+  Job Listings
+</h2>
 
       <Row gutter={20}>
-        {/* Sidebar Filters */}
+        {/* Sidebar Filters - Hidden on small screens */}
         <Col
           className="pt-4"
-          xs={24}
-          sm={4}
+          xs={0}
+          sm={0}
           md={4}
           lg={4}
           style={{ position: "sticky", top: "10px" }}
@@ -101,19 +112,26 @@ function HomePage() {
         </Col>
 
         {/* Job Cards */}
-        <Col xs={24} sm={18} md={18} lg={18}>
-          {/* Scrollable Job Listings - Vertical Only */}
+        <Col xs={24} sm={24} md={20} lg={20}>
           <div
+            className="mx-auto"
             style={{
               height: "85vh",
-              width: "155vh",
-              overflowY: "scroll",
-              overflowX: "hidden",
+              maxWidth: "1200px", // Optional for max width control
+              width: "100%",
+              overflowY: "auto",
               padding: "10px",
               border: "1px solid #ddd",
             }}
           >
-            <Row gutter={[6, 24]} style={{ display: "flex", flexWrap: "wrap" }}>
+            <Row
+              gutter={[32, 24]}
+              style={{
+                margin: 0,
+                display: "flex",
+                flexWrap: "wrap",
+              }}
+            >
               {filteredJobs.length > 0 ? (
                 filteredJobs.map((job) => {
                   const company = recruiters.find(
@@ -138,6 +156,8 @@ function HomePage() {
       </Row>
     </Layout>
   );
+
+
 }
 
 export default HomePage;

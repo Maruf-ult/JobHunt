@@ -85,7 +85,17 @@ function MainDashboard() {
   return (
     <Layout>
       <div className="p-1  overflow-hidden">
-        <h2 className="font-bold text-black pl-3 absolute top-3 mt-3 ">
+            <h2
+  className="font-bold text-black pl-10"
+  style={{
+    position: "fixed",
+    top: "12px", // adjust vertical position to header height
+    left: "180px", // adjust horizontal position beside JobHunt text
+    zIndex: 9999,
+    backgroundColor: "white", // to cover what's behind if needed
+    padding: "0 6px",
+  }}
+>
           Dashboard
         </h2>
         <div className="flex flex-col items-center gap-4">
@@ -96,24 +106,26 @@ function MainDashboard() {
           </div>
 
           {/* Statistics Section */}
-          <div className="flex gap-12  mx-auto  mb-2 text-center bg-white px-7 rounded-md py-1  ">
-            <ul className="bg-blue-400 h-[14vh] w-[32vh] p-2 rounded-lg">
-              <li className="text-xl font-bold">{noUser}</li>
-              <li className="text-gray-600">Total members</li>
-            </ul>
-            <ul className="bg-green-400  h-[14vh] w-[32vh] p-2 rounded-lg">
-              <li className="text-xl font-bold">{admin}</li>
-              <li className="text-gray-600">Admins</li>
-            </ul>
-            <ul className="bg-purple-400  h-[14vh] w-[32vh] p-2 rounded-lg">
-              <li className="text-xl font-bold">{rec}</li>
-              <li className="text-gray-600">Recruiters</li>
-            </ul>
-            <ul className="bg-red-400  h-[14vh] w-[32vh] p-2 rounded-lg">
-              <li className="text-xl font-bold">{applicants}</li>
-              <li className="text-gray-600">Applicants</li>
-            </ul>
-          </div>
+<div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row gap-6 md:gap-12 mx-auto mb-2 text-center bg-white px-4 sm:px-6 md:px-7 rounded-md py-4">
+  <ul className="bg-blue-400 h-[14vh] w-[38vh] md:w-[32vh] p-4 rounded-lg mx-auto">
+    <li className="text-xl font-bold">{noUser}</li>
+    <li className="text-gray-700">Total members</li>
+  </ul>
+  <ul className="bg-green-400 h-[14vh] w-[38vh] md:w-[32vh] p-4 rounded-lg mx-auto">
+    <li className="text-xl font-bold">{admin}</li>
+    <li className="text-gray-700">Admins</li>
+  </ul>
+  <ul className="bg-purple-400 h-[14vh] w-[38vh] md:w-[32vh] p-4 rounded-lg mx-auto">
+    <li className="text-xl font-bold">{rec}</li>
+    <li className="text-gray-700">Recruiters</li>
+  </ul>
+  <ul className="bg-red-400 h-[14vh] w-[38vh] md:w-[32vh] p-4 rounded-lg mx-auto">
+    <li className="text-xl font-bold">{applicants}</li>
+    <li className="text-gray-700">Applicants</li>
+  </ul>
+</div>
+
+
         </div>
       </div>
     </Layout>
