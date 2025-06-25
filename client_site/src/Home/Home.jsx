@@ -245,7 +245,7 @@ return (
         <span className="text-[#6A38C2]">Latest and Top</span> Job Openings
       </h1>
 
-      <div className="flex flex-wrap gap-4 justify-center w-full max-w-6xl">
+       <div className="flex flex-wrap gap-x-6 gap-y-4 justify-center w-full max-w-6xl">
         {jobs.length > 0 ? (
           jobs.slice(0, 3).map((job) => {
             const company = recruiters.find(
@@ -278,7 +278,7 @@ return (
         </Col>
 
         <Col xs={24} sm={18} md={19} lg={20}>
-          <div className="flex flex-wrap justify-center gap-4">
+           <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job) => {
                 const company = recruiters.find(
