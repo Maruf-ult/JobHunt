@@ -245,14 +245,14 @@ return (
         <span className="text-[#6A38C2]">Latest and Top</span> Job Openings
       </h1>
 
-       <div className="flex flex-wrap gap-x-6 gap-y-4 justify-center w-full max-w-6xl">
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 w-full max-w-6xl">
         {jobs.length > 0 ? (
           jobs.slice(0, 3).map((job) => {
             const company = recruiters.find(
               (recruiter) => recruiter.userId === job.createdBy
             );
             return (
-              <div key={job._id} className="p-4 rounded-md w-full sm:w-[300px]">
+              <div key={job._id} className="p-4 rounded-md sm:w-[300px] w-full max-w-[300px] flex-shrink-0">
                 <Jobs recruiter={company} job={job} />
               </div>
             );
@@ -278,14 +278,14 @@ return (
         </Col>
 
         <Col xs={24} sm={18} md={19} lg={20}>
-           <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
+           <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 w-full max-w-6xl">
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job) => {
                 const company = recruiters.find(
                   (recruiter) => recruiter.userId === job.createdBy
                 );
                 return (
-                  <div key={job._id} className="p-4 rounded-md w-full sm:w-[280px]">
+                  <div key={job._id} className="p-4 rounded-md sm:w-[300px] w-full max-w-[300px] flex-shrink-0">
                     <Jobs recruiter={company} job={job} />
                   </div>
                 );
