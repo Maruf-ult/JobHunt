@@ -10,21 +10,21 @@ function CategoryCarousel() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-3/4 ml-40">
+    <div className="relative w-full max-w-5xl mx-auto px-4">
 
       <button
         className="absolute left-[-30px] top-1/2 transform -translate-y-1/2 text-gray-800 z-10 p-2"
         onClick={() => carouselRef.current.prev()}
       >
-        <FaArrowLeft className="h-6 w-6 -ml-8" />
+        <FaArrowLeft className="h-6 w-6 " />
       </button>
 
      
       <Carousel ref={carouselRef} autoplay dots={false} slidesToShow={3}>
         {categories.map((cat, index) => (
-          <div key={index} className="mx-2 cursor-pointer">
+          <div key={index} className="px-4 cursor-pointer">
             <h3
-              className="text-sm font-medium bg-gray-100 px-3 py-2 rounded-md inline-block hover:bg-gray-300"
+              className="text-sm font-medium bg-gray-100 w-36 h-7  rounded-md inline-block hover:bg-gray-300"
               onClick={() => navigate(`/search-results/${cat}`)} 
             >
               {cat}
@@ -38,7 +38,7 @@ function CategoryCarousel() {
         className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 text-gray-800 z-10 p-2"
         onClick={() => carouselRef.current.next()}
       >
-        <FaArrowRight className="h-6 w-6 -ml-20" />
+        <FaArrowRight className="h-6 w-6 " />
       </button>
     </div>
   );

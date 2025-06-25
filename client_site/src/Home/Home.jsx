@@ -226,13 +226,18 @@ return (
         <FaSearch className="h-5 w-5 mx-auto sm:mx-0" />
       </button>
     </div>
+    <div className="mt-12 w-full max-w-lg mx-auto hidden sm:block">
+
+      <CategoryCarousel />
+    </div>
+
   </div>
 </div>
 
 {/* CATEGORY CAROUSEL - HIDDEN ON MOBILE */}
-<div className="-mt-28 px-4 w-full max-w-6xl mx-auto hidden sm:block">
+{/* <div className="-mt-28 px-4 w-full max-w-6xl mx-auto hidden sm:block">
   <CategoryCarousel />
-</div>
+</div> */}
 
     </div>
 
