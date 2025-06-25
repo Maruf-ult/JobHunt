@@ -1,7 +1,7 @@
 # 💼 Job Hunt
 
 ## 🔗 Live Link  
-_Coming Soon_
+# https://job-hunt-ekpz.onrender.com
 
 ## 📌 Description  
 **Job Hunt** is a full-stack **MERN web application** built to bridge the gap between **job seekers and recruiters**. Users can explore job opportunities, apply, and manage their profiles. Recruiters can create job posts, manage applicants, and schedule interviews. The platform features an intuitive **admin dashboard** that offers insights into system activity, application outcomes, and recruitment trends. A secure, responsive, and role-based system ensures a smooth and scalable user experience for everyone involved.
