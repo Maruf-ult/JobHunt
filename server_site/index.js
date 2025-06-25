@@ -14,7 +14,7 @@ const app = express();
 
 
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['https://job-hunt-ekpz.onrender.com'];
 app.use(cors({
   origin: allowedOrigins, 
   credentials: true, 
