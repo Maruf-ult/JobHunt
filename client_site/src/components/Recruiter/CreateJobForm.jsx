@@ -27,7 +27,7 @@ function CreateJobForm({ formValues, handleInputChange, handleSubmit }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="text-black bg-white h-auto w-[185vh] border rounded-lg shadow-lg p-2 mx-auto space-y-2"
+     className="text-black bg-white h-auto w-full max-w-[185vh] border rounded-lg shadow-lg p-2 mx-auto space-y-2"
     >
       <h1 className="text-black text-lg font-semibold underline">
         Job Information

@@ -77,7 +77,7 @@ function RecruitersList() {
       render: (text, record) => (
         <div className="flex items-center">
           <img
-            src={`http://localhost:4000/${record.image?.split("\\").pop()}`}
+            src={`${url}/${record.image?.split("\\").pop()}`}
             alt={record.firstName}
             className="w-10 h-10 rounded-full mr-2"
           />
@@ -136,10 +136,10 @@ function RecruitersList() {
   className="font-bold text-black pl-10"
   style={{
     position: "fixed",
-    top: "12px", // adjust vertical position to header height
-    left: "180px", // adjust horizontal position beside JobHunt text
+    top: "12px", 
+    left: "180px", 
     zIndex: 9999,
-    backgroundColor: "white", // to cover what's behind if needed
+    backgroundColor: "white", 
     padding: "0 6px",
   }}
 >

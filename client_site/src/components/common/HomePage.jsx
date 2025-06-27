@@ -14,7 +14,7 @@ function HomePage() {
   const dispatch = useDispatch();
   const url = import.meta.env.VITE_BACKEND_URL
 
-  // Fetch Jobs
+
   const getJobs = async () => {
     try {
       dispatch(showLoading());
@@ -31,7 +31,7 @@ function HomePage() {
     }
   };
 
-  // Fetch Doctors
+
   const getRecruiters = async () => {
     try {
       dispatch(showLoading());
@@ -53,24 +53,24 @@ function HomePage() {
     getJobs();
   }, []);
 
-  // Filter jobs based on selected category
+
   const filteredJobs = !selectedCategory
     ? jobs
     : jobs.filter((job) => {
-        // Find the doctor related to this job
+     
         const recruiter = recruiters.find((rec) => rec.userId === job.createdBy);
         const recruiterLocation = recruiter?.location?.toLowerCase().trim();
 
-        // Check if selectedCategory matches doctor location
+      
         const locationMatch =
           recruiterLocation === selectedCategory.toLowerCase().trim();
 
-        // Check if selectedCategory matches job position
+     
         const positionMatch =
           job.position?.toLowerCase().trim() ===
           selectedCategory.toLowerCase().trim();
 
-        // Check salary conditions
+     
         const salaryMatch =
           selectedCategory === "Low"
             ? job.salary < 50000
@@ -88,10 +88,10 @@ function HomePage() {
   className="font-bold text-black pl-10"
   style={{
     position: "fixed",
-    top: "12px", // adjust vertical position to header height
-    left: "180px", // adjust horizontal position beside JobHunt text
+    top: "12px", 
+    left: "180px", 
     zIndex: 9999,
-    backgroundColor: "white", // to cover what's behind if needed
+    backgroundColor: "white", 
     padding: "0 6px",
   }}
 >
@@ -99,7 +99,7 @@ function HomePage() {
 </h2>
 
       <Row gutter={20}>
-        {/* Sidebar Filters - Hidden on small screens */}
+      
         <Col
           className="pt-4"
           xs={0}
@@ -111,13 +111,13 @@ function HomePage() {
           <JobFilters setSelectedCategory={setSelectedCategory} />
         </Col>
 
-        {/* Job Cards */}
+      
         <Col xs={24} sm={24} md={20} lg={20}>
           <div
             className="mx-auto"
             style={{
               height: "85vh",
-              maxWidth: "1200px", // Optional for max width control
+              maxWidth: "1200px", 
               width: "100%",
               overflowY: "auto",
               padding: "10px",

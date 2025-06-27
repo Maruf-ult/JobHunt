@@ -12,14 +12,14 @@ function BarChart({ data, labels }) {
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // ✅ Destroy previous chart instance to prevent errors
+    
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
 
     const chartData = Array.isArray(data) ? data : [0, 0, 0];
 
-    // ✅ Create new Bar Chart instance
+
     chartInstance.current = new Chart(ctx, {
       type: "bar",
       data: {

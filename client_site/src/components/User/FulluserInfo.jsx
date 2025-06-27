@@ -55,7 +55,7 @@ function FulluserInfo() {
         <h2 className="text-2xl font-bold mb-6 text-center">User Profile</h2>
 
         <div className="flex items-start space-x-12">
-          {/* Profile Image Section */}
+    
           <div className="flex flex-col items-center">
             <div className="w-40 h-40 rounded-full overflow-hidden border border-gray-500 flex justify-center items-center">
               <img
@@ -67,7 +67,6 @@ function FulluserInfo() {
             <strong>{user.name || "Not provided"}</strong>
           </div>
 
-          {/* User Information Section */}
           <div className="flex flex-col w-full space-y-4 pl-10">
             <h3 className="text-xl font-semibold">Personal Information</h3>
             <p>
@@ -93,7 +92,7 @@ function FulluserInfo() {
                       "bg-purple-500",
                       "bg-indigo-500",
                     ];
-                    const skillColor = colors[index % colors.length]; // Assign different colors
+                    const skillColor = colors[index % colors.length]; 
 
                     return (
                       <span

@@ -65,7 +65,7 @@ function JobFilters({ setSelectedCategory }) {
   );
 }
 
-// PropTypes validation
+
 JobFilters.propTypes = {
   setSelectedCategory: PropTypes.func.isRequired,
 };

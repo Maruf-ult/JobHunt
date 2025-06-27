@@ -12,7 +12,7 @@ function JobDetails() {
   const { user } = useSelector((state) => state.user);
   const [job, setJob] = useState(null);
   const [doctor, setDoctor] = useState(null);
-  // const [loading, setLoading] = useState(true);
+ 
    const url = import.meta.env.VITE_BACKEND_URL
 
   const navigate = useNavigate();
@@ -75,9 +75,7 @@ function JobDetails() {
     }
   };
 
-  // if (loading) {
-  //   return <p className="text-center text-gray-500">Loading...</p>;
-  // }
+
 
   if (!job) {
     return <p className="text-center text-red-500">Job details not found.</p>;

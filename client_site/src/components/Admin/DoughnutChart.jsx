@@ -11,15 +11,15 @@ function DoughnutChart({ data, labels }) {
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // ✅ Destroy existing chart instance if it already exists
+   
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
 
-    // ✅ Ensure data is valid (fallback to default values)
+ 
     const chartData = Array.isArray(data) ? data : [0, 0, 0];
 
-    // ✅ Create a new chart instance
+  
     chartInstance.current = new Chart(ctx, {
       type: "doughnut",
       data: {
@@ -47,7 +47,7 @@ function DoughnutChart({ data, labels }) {
       },
     });
 
-    // ✅ Cleanup function to destroy the chart when component unmounts
+
     return () => {
       if (chartInstance.current) {
         chartInstance.current.destroy();
@@ -58,10 +58,10 @@ function DoughnutChart({ data, labels }) {
   return <canvas ref={chartRef} className="w-full h-64" />;
 }
 
-// ✅ Add PropTypes for validation
+
 DoughnutChart.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.number).isRequired, // Ensures `data` is an array of numbers
-  labels: PropTypes.arrayOf(PropTypes.string).isRequired, // Ensures `labels` is an array of strings
+  data: PropTypes.arrayOf(PropTypes.number).isRequired, 
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired, 
 };
 
 export default DoughnutChart;

@@ -89,19 +89,19 @@ function BookAppointment() {
 
       dispatch(showLoading());
 
-      // Format date and time values
+    
       const formattedDate =
         date && date.format ? date.format("DD-MM-YYYY") : null;
       const formattedTime = time && time.format ? time.format("HH:mm") : null;
 
-      // Ensure formattedDate and formattedTime are valid
+
       if (!formattedDate || !formattedTime || formattedTime === "00:00") {
         toast.error("Please select valid date and time.");
         dispatch(hideLoading());
         return;
       }
 
-      // Convert time to ISO format
+
       const isoTime = moment(formattedTime, "HH:mm").toISOString();
 
       console.log("Formatted Date:", formattedDate);

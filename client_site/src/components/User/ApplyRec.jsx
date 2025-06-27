@@ -36,8 +36,8 @@ function ApplyRec() {
   };
 
   const handleFileChange = (e) => {
-    const { name } = e.target; // Get the field name (image or logo)
-    const file = e.target.files[0]; // Select first file only
+    const { name } = e.target; 
+    const file = e.target.files[0]; 
 
     if (!file) {
       toast.error(`${name} is required.`);
@@ -46,7 +46,7 @@ function ApplyRec() {
 
     setFormValues((prevValues) => ({
       ...prevValues,
-      [name]: file, // Dynamically set image or logo based on input name
+      [name]: file, 
     }));
 
     console.log(`Selected ${name}:`, file);
@@ -109,10 +109,10 @@ function ApplyRec() {
   className="font-bold text-black pl-10"
   style={{
     position: "fixed",
-    top: "12px", // adjust vertical position to header height
-    left: "180px", // adjust horizontal position beside JobHunt text
+    top: "12px", 
+    left: "180px", 
     zIndex: 9999,
-    backgroundColor: "white", // to cover what's behind if needed
+    backgroundColor: "white", 
     padding: "0 6px",
   }}
 >

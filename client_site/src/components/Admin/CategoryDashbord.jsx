@@ -21,7 +21,7 @@ function CategoryDashbord() {
       dispatch(hideLoading());
 
       if (response.data.success) {
-        // ✅ Count job postings per category
+    
         const categoryCounts = {};
         response.data.jobs.forEach((job) => {
           categoryCounts[job.position] =
