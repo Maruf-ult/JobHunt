@@ -37,7 +37,7 @@ function DoughnutChart({ data, labels }) {
           {
             label: "Job Status Overview",
             data: chartData,
-            backgroundColor: ["#4CAF50", "#FFC107", "#E91E63"],
+            backgroundColor: [ "#FFC107","#4CAF50", "#E91E63"],
             borderColor: "#ffffff",
             borderWidth: 1,
           },
