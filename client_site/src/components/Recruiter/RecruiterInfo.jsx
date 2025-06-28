@@ -36,15 +36,17 @@ function RecruiterCV() {
 
   if (!recruiter) return <p className="text-center mt-10">Loading...</p>;
 
-  const profileImage = recruiter.image
-    ? `${url}/${recruiter.image?.split("\\").pop()}`
-    : "https://via.placeholder.com/100";
+const profileImage = recruiter.image
+  ? `${url}/${recruiter.image.replace(/^.*[\\/]/, "")}`
+  : "https://via.placeholder.com/100";
 
   
 
-  const logoImage = recruiter.logo
-    ? `${url}/${recruiter.logo?.split("\\").pop()}`
-    : "https://via.placeholder.com/100";
+const logoImage = recruiter.logo
+  ? `${url}/${recruiter.logo.replace(/^.*[\\/]/, "")}`
+  : "https://via.placeholder.com/100";
+
+  
   return (
     <Layout>
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-2 border relative ">

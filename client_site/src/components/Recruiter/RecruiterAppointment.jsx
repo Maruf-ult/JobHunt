@@ -137,10 +137,10 @@ function RecruiterAppointment() {
   className="font-bold text-black pl-10"
   style={{
     position: "fixed",
-    top: "12px", // adjust vertical position to header height
-    left: "180px", // adjust horizontal position beside JobHunt text
+    top: "12px", 
+    left: "180px", 
     zIndex: 9999,
-    backgroundColor: "white", // to cover what's behind if needed
+    backgroundColor: "white", 
     padding: "0 6px",
   }}
 >
