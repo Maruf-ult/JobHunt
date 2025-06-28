@@ -29,10 +29,14 @@ function StatusDashboard() {
                    let rejectedCount = 0;
 
         response.data.data.forEach((job) => {
-          if (job.status === "pending") pendingCount++;
-          else if (job.status === "approved") approvedCount++;
-          else if (job.status === "rejected") rejectedCount++;
+          if (job.status === "Pending") pendingCount++;
+          else if (job.status === "Approved") approvedCount++;
+          else if (job.status === "Rejected") rejectedCount++;
         });
+
+        console.log(pendingCount)
+        console.log(approvedCount)
+        console.log(rejectedCount)
         setJobData([pendingCount, approvedCount, rejectedCount]);
 
             }
@@ -49,6 +53,8 @@ function StatusDashboard() {
   return (
      <div className="bg-white h-[65vh] w-[60vh] p-8 rounded-lg shadow-2xl flex flex-col items-center">
       <h2 className="text-xl font-bold mb-6 text-center">Job Status Overview</h2>
+      console.log({jobData})
+      console.log({jobLabels})
       <DoughnutChart data={jobData} labels={jobLabels} />
     </div>
 
