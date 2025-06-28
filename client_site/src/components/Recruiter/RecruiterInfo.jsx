@@ -40,10 +40,11 @@ function RecruiterCV() {
     ? `${url}/${recruiter.image?.split("\\").pop()}`
     : "https://via.placeholder.com/100";
 
+  
+
   const logoImage = recruiter.logo
     ? `${url}/${recruiter.logo?.split("\\").pop()}`
     : "https://via.placeholder.com/100";
-
   return (
     <Layout>
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-2 border relative ">

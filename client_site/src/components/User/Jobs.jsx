@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 function Jobs({ recruiter, job }) {
   const navigate = useNavigate();
     const url = import.meta.env.VITE_BACKEND_URL
-  const logoImage = recruiter?.logo
-    ? `${url}/${recruiter.logo?.split("\\").pop()}`
-    : "https://via.placeholder.com/100";
+ const logoImage = recruiter?.logo
+  ? `${url}/${recruiter.logo.replace(/^.*[\\/]/, "")}`
+  : "https://via.placeholder.com/100";
+
 
   const getRelativeDate = (dateString) => {
     const createdAt = new Date(dateString);

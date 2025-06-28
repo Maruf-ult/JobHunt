@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../../Redux/AlertSlice.jsx";
 import Layout from "../common/Layout.jsx";
-import DoctorForm from "./RecruiterForm.jsx";
+import RecruiterForm from "./RecruiterForm.jsx";
+
 
 function ApplyRec() {
   const dispatch = useDispatch();
@@ -118,7 +119,7 @@ function ApplyRec() {
 >
         Recruiter Registration
       </h2>
-      <DoctorForm
+      <RecruiterForm
         formValues={formValues}
         handleInputChange={handleInputChange}
         handleFileChange={handleFileChange}

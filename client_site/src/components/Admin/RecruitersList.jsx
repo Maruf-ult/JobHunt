@@ -76,11 +76,12 @@ function RecruitersList() {
       dataIndex: "profile",
       render: (text, record) => (
         <div className="flex items-center">
-          <img
-            src={`${url}/${record.image?.split("\\").pop()}`}
-            alt={record.firstName}
-            className="w-10 h-10 rounded-full mr-2"
-          />
+         <img
+  src={`${url}/${record.image?.replace(/^.*[\\/]/, "")}`}
+  alt={record.firstName}
+  className="w-10 h-10 rounded-full mr-2"
+/>
+
           <span>
             {record.firstName} {record.lastName}
           </span>
