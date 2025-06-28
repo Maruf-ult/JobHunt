@@ -2,8 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { hideLoading,showLoading } from "../../Redux/AlertSlice";
-import CategoryDashbord from "./CategoryDashbord";
-import StatusDashboard from "./StatusDashBord";
+import CategoryDashbord from "./CategoryDashbord.jsx";
+import StatusDashboard from "./StatusDashBord.jsx";
 import Layout from "../common/Layout";
 
 
